@@ -1,22 +1,24 @@
+import React from "react"
 import { useAtomValue } from "jotai"
 import { userDetails } from "../atom"
 
-
 const UserDisplay = () => {
-
-    const users=useAtomValue(userDetails)
-
-  return (
-    <>
-    {users.map(user=>(
-    <>
-    <h2>{user.name}</h2>
-    <h2>{user.email}</h2>
-    <h2>{user.phone}</h2>
-    <h2>{user.password}</h2>
-    </>
-))}
-    </>
+ const users=useAtomValue(userDetails)
+ return (
+   <>
+  {users.map((user, id) => (
+    <React.Fragment key={id}>
+      <h2>Email : {user.email}</h2>
+      <h2>Password : {user.password}</h2>
+      <h2>Address : {user.address}</h2>
+      <h2>Address2 : {user.address2}</h2>
+      <h2>City : {user.city}</h2>
+      <h2>State : {user.state}</h2>
+      <h2>ZipCode : {user.zip}</h2>
+      <h2>Terms : {user.isChecked ? "Accepted" : "Not Accepted"}</h2>
+    </React.Fragment>
+  ))}
+</>
   )
 }
 

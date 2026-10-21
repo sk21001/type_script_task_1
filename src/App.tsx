@@ -1,5 +1,7 @@
 import UserDetails from "./components/UserDetails"
 import {ErrorBoundary,type FallbackProps} from 'react-error-boundary'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
 
